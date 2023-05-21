@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { useFetch } from "./Pages/Components/useFetch";
+const [, , third] = ['One', 'Two', 'Three']
+
+function App({ name, login }) {
+  const {loading, data, error} = useFetch(
+    `https://api.github.com/users/${login}`
+  )
+  if(loading) return(<h1>Loading..</h1>)
+  if(error) return(<pre>{JSON.stringify(error, null, 2)}</pre>)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello {name}</h1>
+      <h1>{third}</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 }

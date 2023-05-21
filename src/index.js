@@ -2,12 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import US from './Pages/US';
+import UE from './Pages/UE';
+import UR from './Pages/UR';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App name="Hafiz" login='hafizn24'/>
+    <hr />
+    <US />
+    <hr />
+    <UE />
+    <hr />
+    <UR />
   </React.StrictMode>
 );
 
