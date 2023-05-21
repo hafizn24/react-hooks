@@ -32,7 +32,7 @@ function UR() {
 
     const color = useRef()
 
-    const submit = (e) =>{
+    const submit = (e) => {
         e.preventDefault()
         const colorVal = color.current.value
         alert(colorVal)
@@ -41,7 +41,10 @@ function UR() {
 
     return (
         <>
-            <center><h1 onClick={() => setNumber(1)}>{number}</h1></center>
+            <center>
+                <h1>UseReducer</h1>
+                <h1 onClick={() => setNumber(1)}>{number}</h1>
+            </center>
             <input
                 type="checkbox"
                 value={checked}
